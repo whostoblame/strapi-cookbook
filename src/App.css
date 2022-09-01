@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+
+.nav {
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.nav img {
+  width: 7%;
+  height: 7%;
+  margin-left: 1rem;
+  border: solid pink;
+  border-radius: 15px;
+}
+
+.nav ul {
+list-style: none;
+display: flex;
+gap: 1rem;
+margin: 1rem;
+}
+
+.nav .search {
+  padding: 1rem;
+  border-radius: 15px 0px 0px 15px;
+  margin: 0;
+  color: #000;
+}
+
+.nav .button {
+  padding: 1rem;
+  border-radius: 0px 15px 15px 0px;
+  margin: 0;
+  background-color: pink;
+  color: #000;
+
+}
+
+.nav a {
+  color: inherit;
+}
+
+
