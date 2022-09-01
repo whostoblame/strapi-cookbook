@@ -22,8 +22,8 @@ function App() {
        {recipes.map((recipe, index) => {
           console.log(recipe)
          return (
-          <Navbar />
           <div key={recipe.sys.id}>
+            <Navbar />
             <h2>{recipe.fields.header}</h2>
             {recipe.fields.picture?.map((picture, index) =>{
                console.log(picture.id)
