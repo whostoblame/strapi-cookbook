@@ -9,24 +9,31 @@ function App() {
   const [recipes, setRecipes] = useState([])
 
   useEffect(() => {
-    axios.get("https://preview.contentful.com/spaces/d6gach6xgkb5/environments/master/entries?access_token=-a1pu0dqYGnV2VkL1juU49xpUz_Ht49i30ndE_J94gc")
-      .then((response) => { setRecipes(response.data.items) })
-      .catch((err) => { console.log(err) })
+    axios.get("https://cdn.contentful.com/spaces/d6gach6xgkb5/environments/master/entries?access_token=ArEcNdHZeR9OpdsONr1H-_4VoboSlQjXiBeuYfu5RPo")
+      .then((response) => { setRecipes(response.data.items);
+        console.log(response.data) 
+       })
+      .catch((err) => {console.log(err); })
   }, []);
 
-
+/* save assets in a state. save img in array. */
   return (
     <div className="App">
-      <Navbar />
-      {recipes.map((recipe, index) => {
-        console.log(recipe);
-        return (
+       {recipes.map((recipe, index) => {
+          console.log(recipe)
+         return (
+          <Navbar />
           <div key={recipe.sys.id}>
             <h2>{recipe.fields.header}</h2>
-            <img src={`https:${recipe.fields.picture}`} />
+            {recipe.fields.picture?.map((picture, index) =>{
+               console.log(picture.id)
+            })}
+            {/*for each/map if ids are the same. iterate over the other array and find right ID. If url includes picture.id*/}
+           {/* */}
+           
           </div>
         );
-      })}
+      })} 
     </div>
   );
 }
