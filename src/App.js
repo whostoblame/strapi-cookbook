@@ -22,13 +22,23 @@ function App() {
   return (
     <div className="App">
        {recipes.map((recipe, index) => {
-          
-          
          return (
-          <div key={recipe.sys.id}>
+          <div key={recipe.sys.id} >
             <Navbar />
             <h2>{recipe.fields.header}</h2>
-            <GetPictures recipe={recipe} />
+
+            
+            {recipe.fields.receiptText.content.map((content,i) => {
+
+               if (content.nodeType === "heading-1") {
+                return (<h3  key={recipe.sys.id+i}> {content.content[0].value} </h3>);
+              }
+           
+              if (content.nodeType === "paragraph") {
+                return (<p  key={recipe.sys.id+i}> {content.content[0].value} </p>);
+              }
+
+            })}
            
           </div>
         );
