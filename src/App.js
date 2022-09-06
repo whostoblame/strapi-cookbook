@@ -26,7 +26,7 @@ function App() {
           <div key={recipe.sys.id} >
             <Navbar />
             <h2>{recipe.fields.header}</h2>
-
+            <GetPictures />
             
             {recipe.fields.receiptText.content.map((content,i) => {
 

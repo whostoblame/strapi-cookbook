@@ -1,7 +1,7 @@
 import axios from "axios";
 import {useState, useEffect} from "react";
 
-export default function GetPictures(recipe) {
+export default function GetPictures() {
 
     const [img, setImg] = useState([])
     useEffect(()=>{
