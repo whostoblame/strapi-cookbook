@@ -2,11 +2,14 @@ import './App.css';
 import Axios from "axios";
 import { useEffect, useState } from "react";
 import axios from 'axios';
-import Navbar from './Components/Navbar'
+import Navbar from './Components/Navbar';
+import { useNavigate } from "react-router-dom";
+import Recipe from './Components/Recipe';
 import GetPictures from "./Components/GetPictures"
 
 function App() {
 
+  const navigate = useNavigate();
   const [recipes, setRecipes] = useState([])
   
   useEffect(() => {
@@ -15,12 +18,16 @@ function App() {
         //console.log(response.data.assets) 
        })
       .catch((err) => {console.log(err); })
-
   }, []);
 
-/* save assets in a state. save img in array. */
+  const changePage = (id) => {
+    navigate(`/recipes/${id}`)
+  }
+
+  /* save assets in a state. save img in array. */
   return (
     <div className="App">
+
       <Navbar />
        {recipes.map((recipe, index) => {
          console.log(recipe)
@@ -28,22 +35,22 @@ function App() {
           <div key={recipe.sys.id} >
             <h2>{recipe.fields.header}</h2>
             <GetPictures id={recipe.fields.picture[0].sys.id}/>
-            
+            <button onClick={() => { changePage(recipe.sys.id) }}>View more</button>
             {recipe.fields.receiptText.content.map((content,i) => {
 
-               if (content.nodeType === "heading-1") {
-                return (<h3  key={recipe.sys.id+i}> {content.content[0].value} </h3>);
+              if (content.nodeType === "heading-1") {
+                return (<h3 key={recipe.sys.id + i}> {content.content[0].value} </h3>);
               }
-           
+
               if (content.nodeType === "paragraph") {
-                return (<p  key={recipe.sys.id+i}> {content.content[0].value} </p>);
+                return (<p key={recipe.sys.id + i}> {content.content[0].value} </p>);
               }
 
             })}
-           
+
           </div>
         );
-      })} 
+      })}
     </div>
   );
 }
