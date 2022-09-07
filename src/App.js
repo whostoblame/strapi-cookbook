@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     axios.get("https://cdn.contentful.com/spaces/d6gach6xgkb5/environments/master/entries?access_token=ArEcNdHZeR9OpdsONr1H-_4VoboSlQjXiBeuYfu5RPo")
       .then((response) => { setRecipes(response.data.items);
-        //console.log(response.data.assets) 
+        console.log(response.data.items) 
        })
       .catch((err) => {console.log(err); })
 
@@ -21,20 +21,17 @@ function App() {
 /* save assets in a state. save img in array. */
   return (
     <div className="App">
-      <Navbar />
+      
        {recipes.map((recipe, index) => {
-         console.log(recipe)
+
          return (
           <div key={recipe.sys.id} >
             <h2>{recipe.fields.header}</h2>
+            {console.log(recipe.fields.header)}
             <GetPictures id={recipe.fields.picture[0].sys.id}/>
             
             {recipe.fields.receiptText.content.map((content,i) => {
 
-               if (content.nodeType === "heading-1") {
-                return (<h3  key={recipe.sys.id+i}> {content.content[0].value} </h3>);
-              }
-           
               if (content.nodeType === "paragraph") {
                 return (<p  key={recipe.sys.id+i}> {content.content[0].value} </p>);
               }

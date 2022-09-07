@@ -9,7 +9,7 @@ export default function GetPictures({id}) {
 
         axios.get(`https://preview.contentful.com/spaces/d6gach6xgkb5/environments/master/assets/${id}?access_token=-a1pu0dqYGnV2VkL1juU49xpUz_Ht49i30ndE_J94gc`)
             .then((res) =>{
-              console.log(res.data)
+              //console.log(res.data)
                 setImg(res.data);
                 })
                 .catch((err) => {
