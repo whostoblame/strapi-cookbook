@@ -22,11 +22,12 @@ function App() {
   return (
     <div className="App">
        {recipes.map((recipe, index) => {
+         console.log(recipe)
          return (
           <div key={recipe.sys.id} >
             <Navbar />
             <h2>{recipe.fields.header}</h2>
-            <GetPictures />
+            <GetPictures id={recipe.fields.picture[0].sys.id}/>
             
             {recipe.fields.receiptText.content.map((content,i) => {
 
