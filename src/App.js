@@ -21,11 +21,11 @@ function App() {
 /* save assets in a state. save img in array. */
   return (
     <div className="App">
+      <Navbar />
        {recipes.map((recipe, index) => {
          console.log(recipe)
          return (
           <div key={recipe.sys.id} >
-            <Navbar />
             <h2>{recipe.fields.header}</h2>
             <GetPictures id={recipe.fields.picture[0].sys.id}/>
             
