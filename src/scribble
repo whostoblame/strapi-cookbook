@@ -1,0 +1,7 @@
+{recipe.fields.picture?.map((picture, index) =>{
+              
+               {/* recipe.fields.picture[0].sys.id ===  */}
+               return (<div id="img" key={recipe.fields.assets}> </div>) 
+            })}
+            {/*for each/map if ids are the same. iterate over the other array and find right ID. If url includes picture.id*/}
+           {/* */}
