@@ -178,3 +178,8 @@ h1 {
   filter: brightness(60%);
 
 }
+
+.submit {
+  width: 100%;
+  object-fit: cover;
+}
