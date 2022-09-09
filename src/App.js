@@ -1,6 +1,5 @@
 import './App.css';
 import Navbar from './Components/Navbar';
-import { useNavigate } from "react-router-dom";
 import Recipes from "./Components/Recipes";
 import { Routes, Route } from "react-router-dom";
 import Recipe from "./Components/Recipe";
@@ -8,8 +7,6 @@ import Submit from './Components/Submit';
 
 
 function App() {
-
-  const navigate = useNavigate();
 
   return (
     <div>
