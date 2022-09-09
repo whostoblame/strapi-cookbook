@@ -107,7 +107,12 @@
 }
 
 .recipe-container h2 {
+  margin: 0 auto;
   text-align: center;
+  border-bottom: 2px solid pink;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  width: 80%;
 }
 
 .recipe-text {
@@ -128,7 +133,7 @@ h1 {
   text-align: center;
   max-width: 15%;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .recipes-parent {
@@ -141,13 +146,13 @@ h1 {
   background-color: white;
   border: solid 2px pink;
   border-radius: 7px;
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .recipe-button:hover {
   background-color: pink;
   color: white;
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
   font-size: 1.2rem;
 }
 
