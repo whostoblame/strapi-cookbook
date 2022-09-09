@@ -21,6 +21,3 @@ export default function GetPictures({id}) {
               <>{img && <img alt ="thats a tasty dish" className="recipe-img" src={img.fields.file.url}/>} </>
             );
           }
-
-
-    //remove navar; Style img 

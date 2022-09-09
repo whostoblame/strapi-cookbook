@@ -21,10 +21,3 @@ function App() {
 }
 
 export default App;
-
-
-
-/*<Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/recipes/:id" element={<Recipe />} />
-      </Routes> */

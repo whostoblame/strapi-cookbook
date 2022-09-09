@@ -138,6 +138,7 @@ h1 {
 
 .recipes-parent {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .recipe-button {
