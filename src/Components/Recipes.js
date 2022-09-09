@@ -1,10 +1,10 @@
 import axios from "axios";
 import {useState, useEffect} from "react";
 import GetPictures from "./GetPictures";
-
+import {useNavigate} from "react-router-dom";
 export default function Recipes (){
 
-
+const navigate = useNavigate();
 const [recipes, setRecipes] = useState([]);
 
 useEffect(()=>{
@@ -21,7 +21,7 @@ useEffect(()=>{
           <div key={recipe.sys.id} >
             <h2>{recipe.fields.header}</h2>
             <GetPictures id={recipe.fields.picture[0].sys.id} />
-            {/*<button onClick={() => { changePage(recipe.sys.id) }}>View more</button> */}
+            <button onClick={() => { navigate(`/recipes/${recipe.sys.id}`) }}>View more</button> 
             {recipe.fields.receiptText.content.map((content, i) => {
 
               if (content.nodeType === "paragraph") {

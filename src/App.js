@@ -2,8 +2,8 @@ import './App.css';
 import Navbar from './Components/Navbar';
 import { useNavigate } from "react-router-dom";
 import Recipes from "./Components/Recipes";
-import Home from "./Components/Home";
 import {Routes, Route } from "react-router-dom";
+import Recipe from "./Components/Recipe";
 
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
   return (
   
       <Routes> 
-      <Route path='/' element={<Home />}/>
-      <Route path='/recipe' element={<Recipes />}/>
+      <Route path='/' element={<Recipes />}/>
+      <Route path='/recipes/:id' element={<Recipe />}/>
       </Routes>
     
   );
