@@ -7,10 +7,9 @@ export default function Navbar() {
             <input className="search" type="text" placeholder="Find yummy stuff!" />
             <button className="button" type="submit" value="submit">Search</button>
         </div>
-        <div className="navLinks">
-            <Link to="/recipes/:id">BeansPot</Link>
-            <Link to="/recipes/">Recipes</Link>
-            <Link to="/recipes/submit">Submit Recipe</Link>
+        <div>
+            <Link className="navLinks" to="/">Recipes</Link>
+            <Link className="navLinks" to="/recipes/submit">Submit</Link>
         </div>
     </nav>
 }

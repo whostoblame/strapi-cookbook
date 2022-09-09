@@ -15,10 +15,10 @@ export default function GetPictures({id}) {
         .catch((err) => {
           console.log(err);
         });
-    }, []);
+    }, [id]);
 
             return (
-              <>{img && <img src={img.fields.file.url}/>} </>
+              <>{img && <img alt ="thats a tasty dish" className="recipe-img" src={img.fields.file.url}/>} </>
             );
           }
 
